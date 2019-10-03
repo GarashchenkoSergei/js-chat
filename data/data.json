@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Rick",
+    "lastName": "Sanchez",
+    "photo": "./pictures/rick.jpg",
+    "messages": [
+      {
+        "time": "10:00",
+        "text": "hello"
+      },
+      {
+        "time": "10:30",
+        "text": "how are you?"
+      },
+      {
+        "time": "11:00",
+        "text": "Good bye"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Bruce",
+    "lastName": "Wayne",
+    "photo": "./pictures/bats.jpg",
+    "messages": [
+      {
+        "time": "10:45",
+        "text": "Great"
+      },
+      {
+        "time": "11:30",
+        "text": "Bye"
+      }
+    ]
+  }
+]

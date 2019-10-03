@@ -1,0 +1,391 @@
+/* общие стили */
+
+body {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  color: #fff;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #0A0E14;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* стили авторизации */
+.auth {
+  height: 300px;
+  width: 520px;
+  background-color:  #17212b;
+  margin-bottom: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__header {
+  margin-bottom: 0 0 16px 0;
+}
+
+.auth__text {
+  color: #576673;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.auth__input {
+  width: 50%;
+  background-color: transparent;
+  border-bottom: 1px solid #576673;
+  padding: 12px 5px;
+  margin-bottom: 10px;
+}
+
+.auth__input:focus {
+  border-bottom: 1px solid #5288c1;
+}
+
+.auth__button {
+  margin-top: 15px;
+}
+
+/* стили основного окна */
+
+.chat {
+  height: 452px;
+  width: 810px;
+  background-color: #0e1621;
+}
+
+/* стили верхнего элемента с кнопками управления окна */
+
+.chat-header {
+  width: 100%;
+  height: 22px;
+  background-color: #242f3d;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-header__buttons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.chat-button {
+  width: 11px;
+  height: 11px;
+  font-size: 18px;
+  color: #576673;
+  line-height: 1;
+  margin-left: 8px;
+}
+
+.chat-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.close {
+  position: relative;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 4px;
+  bottom: -1px;
+  content: ' ';
+  height: 14px;
+  width: 2px;
+  background-color: #576673;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.fullscreen {
+  border: solid 2px #576673;
+}
+
+.hide {
+  border-bottom: solid 2px #576673;
+}
+
+/* стили основной части окна */
+
+.chat-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #fff;
+}
+
+/* стили списка пользователей */
+
+.chat-body__users {
+  width: 260px;
+  height: 430px;
+  border-right: solid 1px #101921;
+  background-color: #17212b;
+  padding: 0 22px;
+  overflow: auto;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  content: '';
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(23, 33, 43, 0.8);
+}
+
+.overlay__picture {
+  width: 90%;
+  height: 50%;
+  margin-bottom: 20px;
+  background: #000;
+}
+
+.overlay__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-button {
+  color: #2b5278;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.overlay-button:active {
+  color: #fff;
+}
+
+.overlay-button_save {
+  background-color: #242f3d;
+}
+
+.users__search {
+  width: 100%;
+  height: 32px;
+  line-height: 1;
+  padding: 9px 11px;
+  border-radius: 3px;
+  background-color: #242f3d;
+  margin: 12px 0;
+}
+
+.users__search::placeholder {
+  color: #6d7883;
+}
+
+.users__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.users__item {
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.users__item-picture {
+  max-width: 45px;
+  max-height: 45px;
+  min-width: 45px;
+  min-height: 45px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.user-pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.user-pic__add {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: none;
+  background-color: #2b5278;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.users__item-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-text {
+  color: #7f91a4;
+  margin-top: 3px;
+  width: 100px;
+  height: 17px;
+  overflow: hidden;
+}
+
+/* стили элемента с сообщениями */
+
+.chat-body__content {
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  width: 100%;
+}
+
+.content__header {
+  background-color: #17212b;
+  width: 100%;
+  height: 67px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* стили заголовка элемента с сообщениями */
+
+.header__users-count {
+  color: #7f91a4;
+}
+
+/* стили окна с сообщениями */
+
+.content__messages {
+  /* height: calc(100% - 121px); */
+  flex: 1;
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.messages-user__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-user__item {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+}
+
+.messages-user__picture {
+  max-width: 30px;
+  max-height: 30px;
+  overflow: hidden;
+}
+
+.messages__list {
+  margin: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.messages__item {
+  background-color: #182533;
+  border-radius: 3px;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  max-width: 350px;
+}
+
+.messages-user__item_reverse {
+  flex-direction: row-reverse;
+}
+
+.messages__list_reverse {
+  align-items: flex-end;
+}
+
+.messages__item_reverse {
+  background-color: #2b5278;
+}
+
+
+/* стили добавления нового сообщения */
+
+.content__add-message {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #17212b;
+  padding: 15px;
+}
+
+.add-message__text {
+  background-color: #17212b;
+  width: 75%;
+}
+
+.add-message__text::placeholder {
+  color: #5b6774;
+}
+
+.button {
+  width: 112px;
+  height: 28px;
+  background-color: #5288c1;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #5b6774;
+}

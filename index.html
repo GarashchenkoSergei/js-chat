@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="./css/normalize.css">
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <title>Chat Demo</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="auth">
+      <h1 class="auth__header">Авторизация</h1>
+      <p class="auth__text">Введите имя и фамилию </br> для авторизации</p>
+      <input type="text" class="auth__input auth__input_name" placeholder="Ваше имя">
+      <input type="text" class="auth__input auth__input_lastName" placeholder="Ваша фамилия">
+      <button class="auth__button button">ВОЙТИ</button>
+    </div>
+    <div class="chat">
+      <div class="chat-header">
+        <ul class="chat-header__buttons">
+          <li class="chat-button hide"></li>
+          <li class="chat-button fullscreen"></li>
+          <li class="chat-button close"></li>
+        </ul>
+      </div>
+      <div class="chat-body">
+        <div class="chat-body__users">
+          <div class="overlay">
+            <div class="overlay__picture"></div>
+            <div class="overlay__buttons">
+              <button class="overlay-button overlay-button_save">СОХРАНИТЬ</button>
+              <button class="overlay-button overlay-button_cancel">ОТМЕНА</button>
+            </div>
+          </div>
+          <input type="text" class="users__search" placeholder="Найти...">
+          <ul class="users__list">
+          </ul>
+        </div>
+        <div class="chat-body__content">
+          <div class="content__header">
+            <span class="header__name">Чат</span>
+            <span class="header__users-count"></span>
+          </div>
+          <div class="content__messages">
+            <ul class="messages-user__list">
+            </ul>
+          </div>
+          <div class="content__add-message">
+              <input type="text" class="add-message__text" placeholder="Введите сообщение...">
+              <button class="add-message__button button">Отправить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="./scripts/controller.js"></script>
+  <script type="module" src="./scripts/auth.js"></script>
+  
+  <script type="text/x-handlebars-template" id="user">
+    <div class="users__item-picture">
+      <div class="user-pic__add">+</div>
+      <img src={{photo}} alt="" class="user-pic">
+    </div>
+    <div class="users__item-desc">
+      <span class="user-name">{{name}}</span>
+      <span class="user-text">{{message}}</span>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars-template" id="message">
+    <div class="messages-user__picture">
+      <img src={{photo}} alt="" class="user-pic">
+    </div>
+    <ul class="messages__list">
+      {{#each messages}}
+      <li class="messages__item">{{text}} {{time}}</li>
+      {{/each}}
+    </ul>
+  </script>
+
+</body>
+</html>
